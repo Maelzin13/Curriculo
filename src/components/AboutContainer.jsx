@@ -3,7 +3,7 @@ const AboutContainer = () => {
     <section className="about-container">
       <h2>Sobre</h2>
       <p>
-        Sou um Consultor e Desenvolvedor de Software com experiência Junior, 
+        Sou um Consultor e Desenvolvedor de Software, 
         especializado em criar plataformas de software altamente integradas e socialmente participativas. 
         Destaco-me na inovação para Serviços Governamentais e Privados, 
         especialmente no setor da Agricultura. Meu foco é desenvolver uma plataforma para simplificar o registro de agroquímicos no Brasil, 
