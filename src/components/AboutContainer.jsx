@@ -1,23 +1,16 @@
 const AboutContainer = () => {
   return (
     <section className="about-container">
-      <h2>Sobre</h2>
+      <h2>Resumo Pessoal</h2>
       <p>
-        Sou um Consultor e Desenvolvedor de Software, 
-        especializado em criar plataformas de software altamente integradas e socialmente participativas. 
-        Destaco-me na inovação para Serviços Governamentais e Privados, 
-        especialmente no setor da Agricultura. Meu foco é desenvolver uma plataforma para simplificar o registro de agroquímicos no Brasil, 
-        buscando integração, automação e melhoria na comunicação entre gestores e registrantes. Destaco-me pela liderança na transformação digital, 
-        promovendo soluções que impulsionam eficiência, acessibilidade e colaboração em ambientes interconectados.
+        Consultor e Desenvolvedor de Software, especializado em desenvolvimento
+        de plataformas de software inovadoras para os setores Governamental e
+        Privado, com destaque na Agricultura. Foco em integrar e automatizar
+        processos, otimizando a comunicação entre gestores e registrantes de
+        agroquímicos no Brasil. Adaptável, com aprendizado contínuo de novas
+        tecnologias e frameworks, e habilidade em liderar transformações
+        digitais.
       </p>
-      <p>
-        Demonstro forte capacidade de adaptação e aprendizado contínuo, permitindo a rápida assimilação de novas linguagens e frameworks. 
-        Minha versatilidade técnica me capacita a tomar decisões sobre a escolha da tecnologia mais adequada a cada contexto, resultando em sistemas eficientes e robustos. 
-        Além disso, minha abordagem vai além do código, pois priorizo entender as necessidades do cliente. 
-        Minhas soft skills se destacam na tradução de requisitos técnicos complexos em soluções acessíveis e compreensíveis. 
-        A comunicação efetiva com a equipe e stakeholders é fundamental em meu processo, garantindo alinhamento e transparência ao longo de todo o ciclo de desenvolvimento. 
-        Minha contribuição não se limita apenas a entregar soluções tecnológicas avançadas, mas também a promover um ambiente de trabalho colaborativo e eficiente.
-      </p>      
     </section>
   );
 };

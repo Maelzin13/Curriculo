@@ -14,7 +14,7 @@ import {
   DiSass,
   DiJava,
   DiGithub,
-  DiSwift
+  DiSwift,
 } from "react-icons/di";
 
 import "../styles/components/technologiescontainer.sass";
