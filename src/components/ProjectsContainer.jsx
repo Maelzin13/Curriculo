@@ -1,22 +1,23 @@
-import { useState } from "react";
+import React from "react";
+import "../styles/components/projectsContainer.sass";
 
 const ProjectsContainer = () => {
   return (
     <section className="projects-container">
       <h2>Principais Projetos</h2>
-      <div>
+      <div className="experience">
         <ol>
           <li>
             <strong>
               Aplicativo{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=br.com.cooplem.app&pcampaignid=web_share"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                 Cooplem Idiomas
               </a>
             </strong>
             <ul>
-              <br />
               <li>
                 Desenvolvimento de aplicativo IONIC para interação simplificada
                 entre alunos e Cooplem.
@@ -28,19 +29,20 @@ const ProjectsContainer = () => {
               <li>Implementação de funcionalidades de pagamento.</li>
             </ul>
           </li>
-          <br />
+        </ol>
+        <ol>
           <li>
             <strong>
               Customização e Implantação do{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=com.izzyerp.app&pcampaignid=web_share"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                 IzzyERP
               </a>
             </strong>
             :
             <ul>
-              <br />
               <li>
                 Realização de customizações específicas para o IzzyERP, uma
                 solução completa de gestão empresarial para diversos setores.
@@ -58,7 +60,6 @@ const ProjectsContainer = () => {
           </li>
         </ol>
       </div>
-      <br />
     </section>
   );
 };

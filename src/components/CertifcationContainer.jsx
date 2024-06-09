@@ -1,8 +1,9 @@
+import "../styles/components/aboutExpirienceContainer.sass";
 const CertifcationContainer = () => {
   return (
     <section className="about-container">
       <h2>Certificações</h2>
-      <div>
+      <div className="experience">
         <ol>
           <ul>
             <li>

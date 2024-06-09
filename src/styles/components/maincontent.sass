@@ -1,11 +1,23 @@
 @use '../variables'
 @use '../mixins'
-    
+
 #main-content
     background-color: variables.$bg-color
     flex: 2 1 0
     border-radius: variables.$container-border-radius
-    padding: 3rem
+    padding: 2rem
+
+    @include mixins.respond-to(lg)
+        padding: 1rem
+
+    @include mixins.respond-to(md)
+        padding: 1rem
+
+    @include mixins.respond-to(sm)
+        padding: 0rem
+
+    @include mixins.respond-to(xs)
+        padding: 1rem
 
     section
         display: flex

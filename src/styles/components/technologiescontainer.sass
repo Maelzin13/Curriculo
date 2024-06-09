@@ -2,7 +2,6 @@
 @use '../mixins'
 
 .technologies-container   
-
     h2
         color: variables.$text-color
         font-size: 2.2rem
@@ -17,6 +16,9 @@
         justify-content: center
         gap: 1.5rem
 
+        @include mixins.respond-to(sm)
+            gap: 0.5rem
+
     .technology-card
         @include mixins.center
         gap: 1rem
@@ -29,12 +31,36 @@
         justify-content: center
         text-align: center
 
+        @include mixins.respond-to(lg)
+            width: 30%
+
+        @include mixins.respond-to(md)
+            width: 25%
+
+        @include mixins.respond-to(sm)
+            width: 46% 
+
+        @include mixins.respond-to(xs)
+            width: 100%
+
         h3
             color: variables.$text-color
             margin-bottom: 1rem
 
         svg
             font-size: 6rem
+
+    @include mixins.respond-to(md)
+        padding: 1rem
+
+        h2
+            font-size: 2rem
+
+    @include mixins.respond-to(sm)
+        padding: 1rem
+
+        h2
+            font-size: 1.8rem
 
     #html
         svg
@@ -99,3 +125,68 @@
     #swift
         svg 
             color: #FF5722
+             
+    #bootstrap
+        svg
+            color: #563d7c
+
+    #composer
+        svg
+            color: #885630
+
+    #database
+        svg
+            color: #00758f
+
+    #docker
+        svg
+            color: #0db7ed
+
+    #eclipse
+        svg
+            color: #2C2255
+
+    #firebase
+        svg
+            color: #ffcb2b
+
+    #jenkins
+        svg
+            color: #D24939
+
+    #laravel
+        svg
+            color: #FF2D20
+
+    #mongodb
+        svg
+            color: #13aa52
+
+    #mysql
+        svg
+            color: #00758f
+
+    #nginx
+        svg
+            color: #269539
+
+    #php
+        svg
+            color: #8892be
+
+    #postgresql
+        svg
+            color: #336791
+
+    #redis
+        svg
+            color: #D82C20
+
+    #responsive
+        svg
+            color: #4a4a4a
+
+    #sqllite
+        svg
+            color: #003B57
+

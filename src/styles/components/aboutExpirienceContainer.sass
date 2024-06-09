@@ -1,0 +1,65 @@
+@use '../variables'
+@import '../mixins'
+
+.about-container
+    padding: 1rem
+    color: variables.$text-color
+
+    h2
+        font-size: 2.5rem
+        text-align: center
+        margin-bottom: 2rem
+
+
+    .experience
+        margin-bottom: 2rem
+
+        h3
+            font-size: 1.8rem
+            margin-bottom: 0.5rem
+
+        p
+            font-size: 1.2rem
+            margin-bottom: 1rem
+
+        ul
+            list-style-type: disc
+            padding-left: 1.5rem
+
+            li
+                margin-bottom: 0.5rem
+                font-size: 1rem
+
+    @include respond-to(md)
+        padding: 1rem
+
+        h2
+            font-size: 2rem
+
+        .experience
+            h3
+                font-size: 1.5rem
+
+            p
+                font-size: 1rem
+
+            ul
+                li
+                    font-size: 0.9rem
+
+    @include respond-to(sm)
+        padding: 1rem
+
+        h2
+            font-size: 1.8rem
+
+        .experience
+            h3
+                font-size: 1.2rem
+
+            p
+                font-size: 0.9rem
+
+            ul
+                li
+                    font-size: 0.8rem

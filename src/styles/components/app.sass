@@ -1,5 +1,5 @@
 @use '../variables'
-@use '../mixins'
+@import '../mixins'
 
 #portfolio
     display: flex
@@ -16,16 +16,9 @@
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent
 
-@mixin respond-to($breakpoint)
-    @if $breakpoint == xs
-        @media (max-width: $breakpoint-xs)
-            @content
-    @else if $breakpoint == sm
-        @media (max-width: $breakpoint-sm)
-            @content
-    @else if $breakpoint == md
-        @media (max-width: $breakpoint-md)
-            @content
-    @else if $breakpoint == lg
-        @media (max-width: $breakpoint-lg)
-            @content
+    @include respond-to(sm)
+        padding: 2rem
+        gap: 2rem
+        h1
+            font-size: 3rem
+            margin-bottom: 2rem
