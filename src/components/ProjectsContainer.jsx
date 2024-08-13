@@ -59,6 +59,30 @@ const ProjectsContainer = () => {
             </ul>
           </li>
         </ol>
+        <ol>
+          <li>
+            <strong>Desenvolvimento de Blog Social com Laravel</strong>
+
+            <ul>
+              <li>
+                - Criação de uma plataforma social abrangente utilizando
+                Laravel, com funcionalidades como postagem de fotos, vídeos e
+                textos, transmissão ao vivo, chat de mensagens e integração de
+                pagamentos. O projeto inclui um painel de administração completo
+                para gerenciamento eficiente do conteúdo e dos usuários.
+              </li>
+              <br />
+
+              <li>
+                Essas entregas não apenas atendem às expectativas do convênio,
+                mas também refletem a capacidade de atuar em diferentes frentes,
+                desde o desenvolvimento de aplicativos até a personalização e
+                implementação de soluções empresariais, evidenciando um
+                comprometimento integral em todas as fases dos projetos.
+              </li>
+            </ul>
+          </li>
+        </ol>
       </div>
     </section>
   );
