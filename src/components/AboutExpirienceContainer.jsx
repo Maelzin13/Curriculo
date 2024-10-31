@@ -23,6 +23,26 @@ const AboutExpirienceContainer = () => {
             análise de processos, visando introduzir melhorias contínuas na
             gestão estratégica da SES .
           </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Docker</strong>: Containerização do back-end, incluindo
+              configuração de <strong>Apache</strong> e <strong>Nginx </strong>
+              para gerenciamento de servidores.
+            </li>
+            <li>
+              <strong>PHP - Laravel</strong>: Desenvolvimento do back-end,
+              garantindo robustez e segurança nas operações de processamento de
+              dados.
+            </li>
+            <li>
+              <strong>React - Mantis</strong>: Utilizado no front-end para criar
+              interfaces dinâmicas e intuitivas, melhorando a experiência do
+              usuário e a acessibilidade das informações.
+            </li>
+          </ul>
         </ul>
       </div>
       <div className="experience">
@@ -33,39 +53,85 @@ const AboutExpirienceContainer = () => {
         <p>Período: 2022 - 2024</p>
         <ul>
           <li>
-            Engesoftware | Alocação: PNUD - Participação no desenvolvimento ágil
-            do Front-end do Sistema Integrado de Agrotóxicos (SIA), uma
-            iniciativa do Programa das Nações Unidas para o Desenvolvimento
-            (PNUD) para regulamentação de defensivos agrícolas no Brasil,
-            América Latina e Caribe. Tecnologias utilizadas: TypeScript,
-            Angular, Bootstrap, Java e Spring Boot.
+            <strong>Engesoftware | Alocação: PNUD </strong>- Participação no
+            desenvolvimento ágil do Front-end do Sistema Integrado de
+            Agrotóxicos (SIA), uma iniciativa do Programa das Nações Unidas para
+            o Desenvolvimento (PNUD) para regulamentação de defensivos agrícolas
+            no Brasil, América Latina e Caribe.
           </li>
           <li>
-            Merlion TI - Atuação em times de desenvolvimento de sistemas com
-            Angular, Vue.js, e Ionic, contribuindo para projetos de grande
-            relevância.
+            <strong>Tecnologias utilizadas</strong>:
           </li>
-          <li>Entrega de dois aplicativos:</li>
           <ul>
             <li>
-              o Izzy Construction: Plataforma de gestão empresarial para
-              diversos ramos de negócios, desenvolvida com Angular e Ionic.
+              TypeScript e Angular: Desenvolvimento do front-end com foco em uma
+              arquitetura modular e escalável, garantindo interfaces dinâmicas e
+              responsivas.
             </li>
             <li>
-              o Cooplem Idiomas: Customização e implantação de um sistema de
-              gestão de ensino (LMS) baseado em Moodle, com integração entre os
-              módulos Administrativo e Pedagógico, utilizando Laravel em PHP.
+              Bootstrap: Implementação de design responsivo, assegurando que o
+              sistema se adapte a diversos dispositivos e resoluções de tela.
+            </li>
+            <li>
+              Java - Spring Boot: Apoio no back-end para integrar
+              funcionalidades do front-end com a lógica de negócios, garantindo
+              segurança e desempenho no processamento de dados.
+            </li>
+          </ul>
+          <br />
+          <li>
+            Merlion TI - Atuação em equipes de desenvolvimento de sistemas,
+            contribuindo para projetos de grande relevância e impacto.
+            Responsável por desenvolver soluções robustas e escaláveis,
+            utilizando tecnologias modernas para atender às necessidades de
+            diferentes setores empresariais e educacionais.
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Angular e Vue.js</strong>: Desenvolvimento de front-end,
+              criando interfaces dinâmicas e responsivas para melhorar a
+              experiência do usuário.
+            </li>
+            <li>
+              <strong>Ionic</strong>: Criação de aplicativos móveis com foco em
+              multiplataforma, permitindo uma experiência unificada em
+              dispositivos iOS e Android.
+            </li>
+            <li>
+              <strong>Java - Spring Boot</strong>: Desenvolvimento de APIs e
+              back-end, garantindo performance e segurança na manipulação de
+              dados.
+            </li>
+          </ul>
+          <li>Principais entregas:</li>
+          <ul>
+            <li>
+              <strong>Izzy Construction: </strong>
+              Plataforma de gestão empresarial desenvolvida com
+              <strong> Angular e Ionic</strong>, voltada para otimizar operações
+              e processos administrativos em diversos ramos de negócios.
+            </li>
+            <li>
+              <strong>Cooplem Idiomas:</strong>
+              Customização e implantação de um sistema de gestão de ensino (LMS)
+              baseado em Moodle, integrando os módulos Administrativo e
+              Pedagógico. A solução foi desenvolvida em
+              <strong> PHP com Laravel</strong>, proporcionando uma plataforma
+              completa para instituições de ensino, com funcionalidades
+              específicas para a gestão escolar da Cooplem Idiomas.
             </li>
           </ul>
         </ul>
       </div>
       <div className="experience">
-        <p>Empresa Privada (Freelancer)</p>
+        <p>Empresa Privada - NDA (Freelancer)</p>
         <p>
           <i>Desenvolvedor de Plataforma</i>
         </p>
         <p>Período: Julho/2024 - Outubro/2024</p>
-
         <ul>
           <li>
             Desenvolvimento de uma aplicação web usando Laravel e Blade,
@@ -73,16 +139,21 @@ const AboutExpirienceContainer = () => {
             utilizadas incluem:
           </li>
           <ul>
-            <li>Docker: Containerização do banco de dados, Apache e Nginx.</li>
             <li>
-              Pusher e Pushr: Para implementação de lives e notificações e live
-              Chat.
+              <strong>Docker</strong>: Containerização do banco de dados, Apache
+              e Nginx.
             </li>
             <li>
-              Mailgun e API da OpenAI: Integração de funcionalidades avançadas
-              para o projeto.
+              <strong>Pusher e Pushr</strong>: Para implementação de lives e
+              notificações e live Chat.
             </li>
-            <li>Marcado Pago e Efí pay: Para meios de pagamentos</li>
+            <li>
+              <strong>Mailgun e API da OpenAI</strong>: Integração de
+              funcionalidades avançadas para o projeto.
+            </li>
+            <li>
+              <strong>Marcado Pago e Efí pay</strong>: Para meios de pagamentos.
+            </li>
           </ul>
         </ul>
       </div>
