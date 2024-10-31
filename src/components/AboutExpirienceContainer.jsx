@@ -5,34 +5,85 @@ const AboutExpirienceContainer = () => {
     <section className="about-container">
       <h2>Experiência Profissional</h2>
       <div className="experience">
-        <p>Desenvolvedor de Software, Merlion TI</p>
-        <p>2022 – 2024</p>
+        <p>Fiotec</p>
+        <p>
+          <i>Consultor e Desnvolvedor de Software</i>
+        </p>
+        <p>Período: 2024 - Presente</p>
         <ul>
           <li>
-            Desenvolvimento de sistemas em Angular, IONIC, React, Java (Spring),
-            Vue.js.
+            Consultoria especializada para a Secretaria de Estado de Saúde do
+            Distrito Federal (SES-DF), com foco na gestão de informações para o
+            SIOF (Sistema de Informações Orçamentárias e Financeiras). Atuação
+            na atualização e revisão de interfaces para garantir integridade e
+            acessibilidade das informações.
           </li>
           <li>
-            Integração de Bancos de Dados: NoSQL, SQLite, MySQL, PostgreSQL, SQL
-            Server e Oracle.
+            Contribuição para o projeto SESPLAN, com mapeamento de informações e
+            análise de processos, visando introduzir melhorias contínuas na
+            gestão estratégica da SES .
           </li>
-          <li>Aplicação de REST, SOAP, MVC, JSON e outros conceitos.</li>
         </ul>
       </div>
       <div className="experience">
+        <p>Merlion TI e Engesoftware</p>
         <p>
-          Desenvolvedor de Software e Bolsista, Fiotec - Fundação de Apoio à
-          Fiocruz
+          <i>Consultor e Desnvolvedor de Software</i>
         </p>
-        <p>2024 - Presente</p>
+        <p>Período: 2022 - 2024</p>
         <ul>
           <li>
-            Desenvolvimento de sistemas com foco em eficiência e acessibilidade.
+            Engesoftware | Alocação: PNUD - Participação no desenvolvimento ágil
+            do Front-end do Sistema Integrado de Agrotóxicos (SIA), uma
+            iniciativa do Programa das Nações Unidas para o Desenvolvimento
+            (PNUD) para regulamentação de defensivos agrícolas no Brasil,
+            América Latina e Caribe. Tecnologias utilizadas: TypeScript,
+            Angular, Bootstrap, Java e Spring Boot.
           </li>
           <li>
-            Colaboração efetiva com equipe e stakeholders para garantir
-            alinhamento e transparência.
+            Merlion TI - Atuação em times de desenvolvimento de sistemas com
+            Angular, Vue.js, e Ionic, contribuindo para projetos de grande
+            relevância.
           </li>
+          <li>Entrega de dois aplicativos:</li>
+          <ul>
+            <li>
+              o Izzy Construction: Plataforma de gestão empresarial para
+              diversos ramos de negócios, desenvolvida com Angular e Ionic.
+            </li>
+            <li>
+              o Cooplem Idiomas: Customização e implantação de um sistema de
+              gestão de ensino (LMS) baseado em Moodle, com integração entre os
+              módulos Administrativo e Pedagógico, utilizando Laravel em PHP.
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Empresa Privada (Freelancer)</p>
+        <p>
+          <i>Desenvolvedor de Plataforma</i>
+        </p>
+        <p>Período: Julho/2024 - Outubro/2024</p>
+
+        <ul>
+          <li>
+            Desenvolvimento de uma aplicação web usando Laravel e Blade,
+            hospedada em infraestrutura Docker na DigitalOcean. Tecnologias
+            utilizadas incluem:
+          </li>
+          <ul>
+            <li>Docker: Containerização do banco de dados, Apache e Nginx.</li>
+            <li>
+              Pusher e Pushr: Para implementação de lives e notificações e live
+              Chat.
+            </li>
+            <li>
+              Mailgun e API da OpenAI: Integração de funcionalidades avançadas
+              para o projeto.
+            </li>
+            <li>Marcado Pago e Efí pay: Para meios de pagamentos</li>
+          </ul>
         </ul>
       </div>
     </section>

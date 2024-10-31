@@ -10,7 +10,7 @@ const MainContent = () => {
     <main id="main-content">
       <AboutContainer />
       <AboutExpirienceContainer />
-      <ProjectsContainer />
+      {/* <ProjectsContainer /> */}
       <CertifcationContainer />
       <TechnologiesContainer />
     </main>
