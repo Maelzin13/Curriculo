@@ -13,7 +13,7 @@ const AboutContainer = () => {
           qualidade de código e a eficiência em infraestrutura com ferramentas
           como
           <strong> Docker</strong>,<strong> Digital Ocean</strong> e
-          <strong>GitHub</strong>.
+          <strong> GitHub</strong>.
         </p>
         <p>
           Estou em busca de projetos desafiadores que promovam a{" "}
