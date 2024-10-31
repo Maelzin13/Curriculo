@@ -4,47 +4,7 @@ const AboutExpirienceContainer = () => {
   return (
     <section className="about-container">
       <h2>Experiência Profissional</h2>
-      <div className="experience">
-        <p>Fiotec</p>
-        <p>
-          <i>Consultor e Desnvolvedor de Software</i>
-        </p>
-        <p>Período: 2024 - Presente</p>
-        <ul>
-          <li>
-            Consultoria especializada para a Secretaria de Estado de Saúde do
-            Distrito Federal (SES-DF), com foco na gestão de informações para o
-            SIOF (Sistema de Informações Orçamentárias e Financeiras). Atuação
-            na atualização e revisão de interfaces para garantir integridade e
-            acessibilidade das informações.
-          </li>
-          <li>
-            Contribuição para o projeto SESPLAN, com mapeamento de informações e
-            análise de processos, visando introduzir melhorias contínuas na
-            gestão estratégica da SES .
-          </li>
-          <li>
-            <strong>Tecnologias utilizadas</strong>:
-          </li>
-          <ul>
-            <li>
-              <strong>Docker</strong>: Containerização do back-end, incluindo
-              configuração de <strong>Apache</strong> e <strong>Nginx </strong>
-              para gerenciamento de servidores.
-            </li>
-            <li>
-              <strong>PHP - Laravel</strong>: Desenvolvimento do back-end,
-              garantindo robustez e segurança nas operações de processamento de
-              dados.
-            </li>
-            <li>
-              <strong>React - Mantis</strong>: Utilizado no front-end para criar
-              interfaces dinâmicas e intuitivas, melhorando a experiência do
-              usuário e a acessibilidade das informações.
-            </li>
-          </ul>
-        </ul>
-      </div>
+
       <div className="experience">
         <p>Merlion TI e Engesoftware</p>
         <p>
@@ -153,6 +113,47 @@ const AboutExpirienceContainer = () => {
             </li>
             <li>
               <strong>Marcado Pago e Efí pay</strong>: Para meios de pagamentos.
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Fiotec</p>
+        <p>
+          <i>Consultor e Desnvolvedor de Software</i>
+        </p>
+        <p>Período: 2024 - Presente</p>
+        <ul>
+          <li>
+            Consultoria especializada para a Secretaria de Estado de Saúde do
+            Distrito Federal (SES-DF), com foco na gestão de informações para o
+            SIOF (Sistema de Informações Orçamentárias e Financeiras). Atuação
+            na atualização e revisão de interfaces para garantir integridade e
+            acessibilidade das informações.
+          </li>
+          <li>
+            Contribuição para o projeto SESPLAN, com mapeamento de informações e
+            análise de processos, visando introduzir melhorias contínuas na
+            gestão estratégica da SES .
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Docker</strong>: Containerização do back-end, incluindo
+              configuração de <strong>Apache</strong> e <strong>Nginx </strong>
+              para gerenciamento de servidores.
+            </li>
+            <li>
+              <strong>PHP - Laravel</strong>: Desenvolvimento do back-end,
+              garantindo robustez e segurança nas operações de processamento de
+              dados.
+            </li>
+            <li>
+              <strong>React - Mantis</strong>: Utilizado no front-end para criar
+              interfaces dinâmicas e intuitivas, melhorando a experiência do
+              usuário e a acessibilidade das informações.
             </li>
           </ul>
         </ul>

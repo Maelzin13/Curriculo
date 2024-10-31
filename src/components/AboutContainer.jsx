@@ -5,14 +5,24 @@ const AboutContainer = () => {
       <section className="about-container">
         <h2>Objetivo Profissional</h2>
         <p>
-          Atuar como Desenvolvedor de Software, aplicando expertise em Laravel,
-          JavaScript e metodologias ágeis para criar soluções inovadoras e
-          escaláveis. Busco contribuir em projetos desafiadores, focados em
-          transformação digital e otimização de processos, com ênfase na
-          qualidade de código, integração contínua e colaboração em equipes de
-          alta performance.
+          Sou um Desenvolvedor de Software focado em criar soluções inovadoras e
+          escaláveis utilizando
+          <strong> Angular, Ionic, React, Vue.js, Laravel, JavaScript</strong> e
+          <strong> Node.js</strong>. Tenho experiência em transformação digital,
+          desenvolvimento ágil e integração contínua, buscando sempre a
+          qualidade de código e a eficiência em infraestrutura com ferramentas
+          como
+          <strong> Docker</strong>,<strong> Digital Ocean</strong> e
+          <strong>GitHub</strong>.
+        </p>
+        <p>
+          Estou em busca de projetos desafiadores que promovam a{" "}
+          <strong>otimização de processos</strong> e que me permitam colaborar
+          em equipes de alta performance, contribuindo para resultados
+          significativos e impactantes.
         </p>
       </section>
+
       <section className="about-container">
         <h2>Resumo Pessoal</h2>
         <p>
