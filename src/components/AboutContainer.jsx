@@ -28,11 +28,11 @@ const AboutContainer = () => {
         <p>
           Desenvolvedor de Software, especializado em desenvolvimento de
           plataformas de software inovadoras para os setores Governamental e
-          Privado, com destaque na Agricultura. Foco em integrar e automatizar
-          processos, otimizando a comunicação entre gestores e registrantes de
-          agroquímicos no Brasil. Adaptável, com aprendizado contínuo de novas
-          tecnologias e frameworks, e habilidade em liderar transformações
-          digitais.
+          Privado, permeando cenários de negócio desde agricultura, saúde e ERP
+          para construção civil, com soluções em arquitetura orientada a
+          serviços e barramentos de integração com outros sistemas. Adaptável,
+          com aprendizado contínuo de novas tecnologias e frameworks, e
+          habilidade em liderar transformações digitais.
         </p>
       </section>
     </>
