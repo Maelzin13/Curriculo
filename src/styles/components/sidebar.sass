@@ -10,6 +10,10 @@
     align-items: center
     text-align: center
     margin: 0 auto
+    position: sticky
+    top: 3rem
+    max-height: calc(100vh - 6rem)
+    overflow-y: auto
     img 
         width: 100%
         max-width: 12vw
@@ -32,9 +36,10 @@
     .btn
         @include mixins.btn
 
-    @media screen and (max-width: 768px) 
-        #sidebar
-            flex: 0.2 200px
+    @media screen and (max-width: 768px)
+        flex: 0.2 200px
+        position: static
+        max-height: none
         img
             max-width: 50%
     

@@ -1,7 +1,7 @@
 @use '../variables'
 @use '../mixins'
 
-.technologies-container   
+.technologies-container
     h2
         color: variables.$text-color
         font-size: 2.2rem
@@ -10,45 +10,53 @@
         justify-content: center
         gap: 1rem
 
+    .technology-category
+        margin-bottom: 2rem
+
+        &:last-child
+            margin-bottom: 0
+
+    .technology-category-title
+        color: variables.$text-color-secondary
+        font-size: 1rem
+        text-transform: uppercase
+        letter-spacing: .08em
+        text-align: left
+        margin-bottom: 1rem
+        padding-left: .8rem
+        border-left: 3px solid #dd2476
+
     .technologies-grid
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        gap: 1.5rem
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
+        gap: 1rem
 
         @include mixins.respond-to(sm)
-            gap: 0.5rem
+            grid-template-columns: repeat(auto-fill, minmax(75px, 1fr))
+            gap: 0.6rem
 
     .technology-card
         @include mixins.center
-        gap: 1rem
-        border: 1px solid #333
-        width: 25%
-        border-radius: variables.$card-border-radius
-        display: flex
         flex-direction: column
-        align-items: center
-        justify-content: center
+        gap: .6rem
+        background-color: variables.$bg-color-secondary
+        border-radius: variables.$card-border-radius
+        padding: 1.2rem .8rem
         text-align: center
+        transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease
 
-        @include mixins.respond-to(lg)
-            width: 30%
+        &:hover
+            transform: translateY(-3px)
+            box-shadow: 0 8px 16px rgba(0, 0, 0, .35)
 
-        @include mixins.respond-to(md)
-            width: 25%
-
-        @include mixins.respond-to(sm)
-            width: 46% 
-
-        @include mixins.respond-to(xs)
-            width: 100%
-
-        h3
-            color: variables.$text-color
-            margin-bottom: 1rem
+        h4
+            color: variables.$text-color-secondary
+            font-size: .75rem
+            font-weight: normal
+            margin-bottom: 0
 
         svg
-            font-size: 6rem
+            font-size: 2.6rem
 
     @include mixins.respond-to(md)
         padding: 1rem
@@ -66,66 +74,86 @@
         svg
             color: #E44D26
 
-    #css 
-        svg 
+    #css
+        svg
             color: #1572B6
 
-    #js 
-        svg 
+    #js
+        svg
             color: #F0DB4F
 
-    #java 
-        svg 
+    #typescript
+        svg
+            color: #3178C6
+
+    #java
+        svg
             color: #007396
 
-    #node 
-        svg 
+    #springboot
+        svg
+            color: #6DB33F
+
+    #python
+        svg
+            color: #3776AB
+
+    #node
+        svg
             color: #83CD29
 
-    #react 
-        svg 
+    #react
+        svg
             color: #61DAFB
 
-    #angular 
-        svg 
+    #vuejs
+        svg
+            color: #4FC08D
+
+    #angular
+        svg
             color: #DD1B16
 
-    #android 
-        svg 
+    #android
+        svg
             color: #A4C639
 
-    #ionic 
-        svg 
+    #ionic
+        svg
             color: #3880FF
 
-    #sass 
-        svg 
+    #sass
+        svg
             color: #CC6699
 
-    #git 
-        svg 
+    #git
+        svg
             color: #F05032
 
-    #scrum 
-        svg 
+    #scrum
+        svg
             color: #6DBCAD
 
-    #npm 
-        svg 
+    #npm
+        svg
             color: #CB3837
 
-    #jira 
-        svg 
+    #jira
+        svg
             color: #0052CC
 
-    #github 
-        svg 
-            color: #181717
+    #figma
+        svg
+            color: #A259FF
+
+    #github
+        svg
+            color: #f5f5f5
 
     #swift
-        svg 
+        svg
             color: #FF5722
-             
+
     #bootstrap
         svg
             color: #563d7c
@@ -141,6 +169,10 @@
     #docker
         svg
             color: #0db7ed
+
+    #aws
+        svg
+            color: #FF9900
 
     #eclipse
         svg
@@ -184,9 +216,8 @@
 
     #responsive
         svg
-            color: #4a4a4a
+            color: #9aa0a6
 
     #sqllite
         svg
             color: #003B57
-

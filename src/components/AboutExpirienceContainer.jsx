@@ -6,9 +6,77 @@ const AboutExpirienceContainer = () => {
       <h2>Experiência Profissional</h2>
 
       <div className="experience">
+        <p>Quero Passagem</p>
+        <p>
+          <i>Desenvolvedor Full Stack Pleno</i>
+        </p>
+        <p>Período: Novembro/2025 - Presente · São Paulo/SP</p>
+        <ul>
+          <li>Atuação como Desenvolvedor Full Stack Pleno, atualmente em andamento.</li>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Engesoftware Tecnologia S.A</p>
+        <p>
+          <i>Desenvolvedor Fullstack</i>
+        </p>
+        <p>Período: Junho/2025 - Presente · Brasília/DF</p>
+        <ul>
+          <li>
+            Atuação em projetos legados da Terracap, desenvolvendo e dando
+            manutenção em sistemas corporativos com <strong>Java</strong> e{" "}
+            <strong>PHP</strong>, garantindo a continuidade, estabilidade e
+            evolução das aplicações utilizadas pela empresa.
+          </li>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Regimento Interno Comentado · Câmara dos Deputados</p>
+        <p>
+          <i>Desenvolvedor Full Stack Web &amp; Mobile (Projeto Autoral)</i>
+        </p>
+        <p>Período: Dezembro/2024 - Outubro/2025 (concluído) · Brasília/DF</p>
+        <ul>
+          <li>
+            Transformação do livro <strong>"Regimento Interno Facilitado"</strong>{" "}
+            em uma obra digital interativa (web, Android e iOS), publicada por um
+            servidor da Câmara dos Deputados, com estruturação hierárquica do
+            conteúdo em Livro → Título → Capítulo → Seção → Artigo → Parágrafo.
+          </li>
+          <li>
+            Inserções interativas: comentários, notas de rodapé, remissões e
+            quadros esquemáticos, conectando temas e permitindo navegação entre
+            trechos relacionados.
+          </li>
+          <li>
+            Sistema de login social (Google, Facebook, Instagram), controle de
+            acesso por assinatura e dashboard administrativo para edição e
+            gestão do conteúdo.
+          </li>
+          <li>
+            <strong>Resultado:</strong> redução de 35% na carga do banco de
+            dados e aumento de 40% na velocidade de resposta, com boas
+            práticas replicadas para outros sistemas jurídicos da consultoria.
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Laravel e MySQL</strong>: backend robusto, autenticação
+              segura e deploy via Docker.
+            </li>
+            <li>
+              <strong>Angular, Ionic e Capacitor</strong>: frontend mobile com
+              navegação inteligente e modo offline.
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div className="experience">
         <p>Merlion TI e Engesoftware</p>
         <p>
-          <i>Consultor e Desnvolvedor de Software</i>
+          <i>Consultor e Desenvolvedor de Software</i>
         </p>
         <p>Período: 2022 - 2024</p>
         <ul>
@@ -87,42 +155,52 @@ const AboutExpirienceContainer = () => {
         </ul>
       </div>
       <div className="experience">
-        <p>Empresa Privada - NDA (Freelancer)</p>
+        <p>Snapic Tecnologia</p>
         <p>
-          <i>Desenvolvedor de Plataforma</i>
+          <i>Engenheiro de Software</i>
         </p>
-        <p>Período: Julho/2024 - Outubro/2024</p>
+        <p>Período: Janeiro/2024 - Janeiro/2025 (1 ano 1 mês) · São Paulo/SP</p>
         <ul>
           <li>
-            Desenvolvimento de uma aplicação web usando Laravel e Blade,
-            hospedada em infraestrutura Docker na DigitalOcean. Tecnologias
-            utilizadas incluem:
+            Desenvolvimento de uma plataforma white-label altamente complexa,
+            contribuindo no front-end, back-end, QA, infraestrutura e
+            integrações estratégicas. Liderança de uma equipe de 3
+            desenvolvedores até a entrega final do projeto.
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
           </li>
           <ul>
             <li>
-              <strong>Docker</strong>: Containerização do banco de dados, Apache
-              e Nginx.
+              <strong>Pagamentos</strong>: cartão, PIX, boleto e saques via
+              Mercado Pago, Stripe e Efipay.
             </li>
             <li>
-              <strong>Pusher e Pushr</strong>: Para implementação de lives e
-              notificações e live Chat.
+              <strong>Tempo real</strong>: Pusher e WebSocket para mensagens e
+              transmissão ao vivo com envio de presentes.
             </li>
             <li>
-              <strong>Mailgun e API da OpenAI</strong>: Integração de
-              funcionalidades avançadas para o projeto.
+              <strong>Cloud &amp; DevOps</strong>: Docker, DigitalOcean
+              (Droplets &amp; Spaces), AWS (ECS/S3) e Firebase Storage.
             </li>
             <li>
-              <strong>Marcado Pago e Efí pay</strong>: Para meios de pagamentos.
+              <strong>Integrações</strong>: Zendesk, bots do Telegram, API
+              Meta (Facebook), Google OAuth 2.0 e ChatGPT para feed
+              personalizado.
             </li>
           </ul>
+          <li>
+            <strong>Resultado:</strong> redução de 25% no tempo médio de
+            suporte e aumento de 18% no engajamento.
+          </li>
         </ul>
       </div>
       <div className="experience">
         <p>Fiotec</p>
         <p>
-          <i>Consultor e Desnvolvedor de Software</i>
+          <i>Consultor e Desenvolvedor de Software (Pesquisador Técnico)</i>
         </p>
-        <p>Período: 2024 - Presente</p>
+        <p>Período: Janeiro/2024 - Março/2026</p>
         <ul>
           <li>
             Consultoria especializada para a Secretaria de Estado de Saúde do

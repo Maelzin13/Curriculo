@@ -6,6 +6,7 @@ const CertifcationContainer = () => {
       <div className="experience">
         <ol>
           <ul>
+            <li>Python (2025)</li>
             <li>Server Deploy Digital Ocean – EspecializaTI (2024)</li>
             <li>Rocketseat</li>
             <ul>
