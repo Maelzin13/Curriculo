@@ -1,3 +1,5 @@
 node_modules
 .claude
 .mcp.json
+# CVs em DOCX/PDF contêm telefone - não versionar (repo público)
+curriculos/

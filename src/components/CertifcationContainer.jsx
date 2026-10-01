@@ -6,16 +6,17 @@ const CertifcationContainer = () => {
       <div className="experience">
         <ol>
           <ul>
-            <li>Python (2025)</li>
+            <li>Introdução ao GitHub Copilot – Microsoft Learn (2025)</li>
             <li>Server Deploy Digital Ocean – EspecializaTI (2024)</li>
             <li>Rocketseat</li>
             <ul>
-              <li>Java (2024)</li>
+              <li>NLW Connect Python (2025)</li>
               <li>PHP (2024)</li>
+              <li>NLW Unite Java (2024)</li>
+              <li>Java (2023)</li>
               <li>NLW IA (2023)</li>
-              <li>NLW Unite Java (2023)</li>
             </ul>
-            <li>Spring Boot React – Curso em Vídeo (2023)</li>
+            <li>Spring Boot + React JS – Udemy (2023)</li>
             <li>JavaScript – Curso em Vídeo (2021)</li>
             <li>
               Histórias de Usuários Efetivas em Projetos Scrum – Udemy (2021)

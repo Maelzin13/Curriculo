@@ -10,9 +10,14 @@ const AboutExpirienceContainer = () => {
         <p>
           <i>Desenvolvedor Full Stack Pleno</i>
         </p>
-        <p>Período: Novembro/2025 - Presente · São Paulo/SP</p>
+        <p>Período: Novembro/2025 - Presente · São Paulo/SP · Remoto</p>
         <ul>
-          <li>Atuação como Desenvolvedor Full Stack Pleno, atualmente em andamento.</li>
+          <li>
+            Desenvolvimento de soluções que tornam a experiência de compra de
+            passagens rodoviárias mais simples, tecnológica e acessível, atuando
+            no back-end com <strong>Laravel</strong> e no mobile com{" "}
+            <strong>Ionic Framework</strong>.
+          </li>
         </ul>
       </div>
       <div className="experience">
@@ -20,7 +25,7 @@ const AboutExpirienceContainer = () => {
         <p>
           <i>Desenvolvedor Fullstack</i>
         </p>
-        <p>Período: Junho/2025 - Presente · Brasília/DF</p>
+        <p>Período: Junho/2025 - Presente · Brasília/DF · Remoto</p>
         <ul>
           <li>
             Atuação em projetos legados da Terracap, desenvolvendo e dando
@@ -35,7 +40,7 @@ const AboutExpirienceContainer = () => {
         <p>
           <i>Desenvolvedor Full Stack Web &amp; Mobile (Projeto Autoral)</i>
         </p>
-        <p>Período: Dezembro/2024 - Outubro/2025 (concluído) · Brasília/DF</p>
+        <p>Período: Dezembro/2024 - Outubro/2025 · Brasília/DF · Remoto</p>
         <ul>
           <li>
             Transformação do livro <strong>"Regimento Interno Facilitado"</strong>{" "}
@@ -74,11 +79,102 @@ const AboutExpirienceContainer = () => {
         </ul>
       </div>
       <div className="experience">
+        <p>Fiotec - Fundação de Apoio à Fiocruz</p>
+        <p>
+          <i>Pesquisador Técnico (Consultor de TI)</i>
+        </p>
+        <p>Período: Janeiro/2024 - Março/2026 · Remoto</p>
+        <ul>
+          <li>
+            Consultoria de TI para a Secretaria de Estado de Saúde do Distrito
+            Federal (SES-DF), no desenvolvimento e manutenção de sistemas
+            estratégicos como o SIOF (Sistema de Informações Orçamentárias e
+            Financeiras) e o projeto SESPLAN.
+          </li>
+          <li>
+            Atualização e modernização de interfaces, mapeamento de processos,
+            análise de requisitos e melhorias voltadas à acessibilidade,
+            integridade dos dados e usabilidade.
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Docker</strong>: Containerização do back-end, incluindo
+              configuração de <strong>Apache</strong> e <strong>Nginx </strong>
+              para gerenciamento de servidores.
+            </li>
+            <li>
+              <strong>PHP - Laravel</strong>: Desenvolvimento do back-end,
+              garantindo robustez e segurança nas operações de processamento de
+              dados.
+            </li>
+            <li>
+              <strong>React - Mantis</strong>: Utilizado no front-end para criar
+              interfaces dinâmicas e intuitivas, melhorando a experiência do
+              usuário e a acessibilidade das informações.
+            </li>
+            <li>
+              <strong>Oracle SQL Developer</strong>: Consultas e manutenção em
+              banco de dados Oracle.
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Snapic Tecnologia</p>
+        <p>
+          <i>Engenheiro de Software</i>
+        </p>
+        <p>Período: Janeiro/2024 - Janeiro/2025 · São Paulo/SP · Remoto</p>
+        <ul>
+          <li>
+            Desenvolvimento de uma plataforma white-label altamente complexa,
+            contribuindo no front-end, back-end, QA, infraestrutura e
+            integrações estratégicas. Liderança de uma equipe de 3
+            desenvolvedores até a entrega final do projeto.
+          </li>
+          <li>
+            <strong>Tecnologias utilizadas</strong>:
+          </li>
+          <ul>
+            <li>
+              <strong>Pagamentos</strong>: cartão, PIX, boleto e saques via
+              Mercado Pago, Stripe e Efipay, além de cobrança recorrente
+              (assinaturas) e carteira digital.
+            </li>
+            <li>
+              <strong>Tempo real</strong>: Pusher para mensagens em massa,
+              Pushr para streaming e WebSocket para transmissão ao vivo com
+              envio de presentes.
+            </li>
+            <li>
+              <strong>Cloud &amp; DevOps</strong>: Docker, DigitalOcean
+              (Droplets &amp; Spaces), AWS (ECS/S3/mTLS) e Firebase Storage.
+            </li>
+            <li>
+              <strong>Integrações</strong>: Zendesk, bots do Telegram, API
+              Meta (Facebook), Google OAuth 2.0 e ChatGPT para feed
+              personalizado.
+            </li>
+            <li>
+              <strong>UI/UX</strong>: redesign completo dos layouts para uma
+              experiência mais fluida e moderna.
+            </li>
+          </ul>
+          <li>
+            <strong>Resultado:</strong> redução de 25% no tempo médio de
+            suporte e aumento de 18% no engajamento.
+          </li>
+        </ul>
+      </div>
+      <div className="experience">
         <p>Merlion TI e Engesoftware</p>
         <p>
-          <i>Consultor e Desenvolvedor de Software</i>
+          <i>Desenvolvedor Web (Terceirizado)</i>
         </p>
-        <p>Período: 2022 - 2024</p>
+        <p>Período: Setembro/2022 - Março/2024 · Brasília/DF</p>
         <ul>
           <li>
             <strong>Engesoftware | Alocação: PNUD </strong>- Participação no
@@ -108,11 +204,10 @@ const AboutExpirienceContainer = () => {
           </ul>
           <br />
           <li>
-            Merlion TI - Atuação em equipes de desenvolvimento de sistemas,
-            contribuindo para projetos de grande relevância e impacto.
-            Responsável por desenvolver soluções robustas e escaláveis,
-            utilizando tecnologias modernas para atender às necessidades de
-            diferentes setores empresariais e educacionais.
+            <strong>Merlion TI</strong> - Desenvolvimento e manutenção de
+            sistemas web em diversos frameworks e linguagens, com foco em
+            performance, escalabilidade, integração entre plataformas e
+            digitalização de processos internos e externos.
           </li>
           <li>
             <strong>Tecnologias utilizadas</strong>:
@@ -129,9 +224,12 @@ const AboutExpirienceContainer = () => {
               dispositivos iOS e Android.
             </li>
             <li>
-              <strong>Java - Spring Boot</strong>: Desenvolvimento de APIs e
-              back-end, garantindo performance e segurança na manipulação de
-              dados.
+              <strong>PHP (Laravel, Zend, nativo) e Java (EE, Spring Boot)</strong>:
+              APIs REST e SOAP em arquitetura MVC.
+            </li>
+            <li>
+              <strong>Bancos de dados</strong>: PostgreSQL, MySQL, Oracle, SQL
+              Server e NoSQL.
             </li>
           </ul>
           <li>Principais entregas:</li>
@@ -150,88 +248,6 @@ const AboutExpirienceContainer = () => {
               <strong> PHP com Laravel</strong>, proporcionando uma plataforma
               completa para instituições de ensino, com funcionalidades
               específicas para a gestão escolar da Cooplem Idiomas.
-            </li>
-          </ul>
-        </ul>
-      </div>
-      <div className="experience">
-        <p>Snapic Tecnologia</p>
-        <p>
-          <i>Engenheiro de Software</i>
-        </p>
-        <p>Período: Janeiro/2024 - Janeiro/2025 (1 ano 1 mês) · São Paulo/SP</p>
-        <ul>
-          <li>
-            Desenvolvimento de uma plataforma white-label altamente complexa,
-            contribuindo no front-end, back-end, QA, infraestrutura e
-            integrações estratégicas. Liderança de uma equipe de 3
-            desenvolvedores até a entrega final do projeto.
-          </li>
-          <li>
-            <strong>Tecnologias utilizadas</strong>:
-          </li>
-          <ul>
-            <li>
-              <strong>Pagamentos</strong>: cartão, PIX, boleto e saques via
-              Mercado Pago, Stripe e Efipay.
-            </li>
-            <li>
-              <strong>Tempo real</strong>: Pusher e WebSocket para mensagens e
-              transmissão ao vivo com envio de presentes.
-            </li>
-            <li>
-              <strong>Cloud &amp; DevOps</strong>: Docker, DigitalOcean
-              (Droplets &amp; Spaces), AWS (ECS/S3) e Firebase Storage.
-            </li>
-            <li>
-              <strong>Integrações</strong>: Zendesk, bots do Telegram, API
-              Meta (Facebook), Google OAuth 2.0 e ChatGPT para feed
-              personalizado.
-            </li>
-          </ul>
-          <li>
-            <strong>Resultado:</strong> redução de 25% no tempo médio de
-            suporte e aumento de 18% no engajamento.
-          </li>
-        </ul>
-      </div>
-      <div className="experience">
-        <p>Fiotec</p>
-        <p>
-          <i>Consultor e Desenvolvedor de Software (Pesquisador Técnico)</i>
-        </p>
-        <p>Período: Janeiro/2024 - Março/2026</p>
-        <ul>
-          <li>
-            Consultoria especializada para a Secretaria de Estado de Saúde do
-            Distrito Federal (SES-DF), com foco na gestão de informações para o
-            SIOF (Sistema de Informações Orçamentárias e Financeiras). Atuação
-            na atualização e revisão de interfaces para garantir integridade e
-            acessibilidade das informações.
-          </li>
-          <li>
-            Contribuição para o projeto SESPLAN, com mapeamento de informações e
-            análise de processos, visando introduzir melhorias contínuas na
-            gestão estratégica da SES .
-          </li>
-          <li>
-            <strong>Tecnologias utilizadas</strong>:
-          </li>
-          <ul>
-            <li>
-              <strong>Docker</strong>: Containerização do back-end, incluindo
-              configuração de <strong>Apache</strong> e <strong>Nginx </strong>
-              para gerenciamento de servidores.
-            </li>
-            <li>
-              <strong>PHP - Laravel</strong>: Desenvolvimento do back-end,
-              garantindo robustez e segurança nas operações de processamento de
-              dados.
-            </li>
-            <li>
-              <strong>React - Mantis</strong>: Utilizado no front-end para criar
-              interfaces dinâmicas e intuitivas, melhorando a experiência do
-              usuário e a acessibilidade das informações.
             </li>
           </ul>
         </ul>
