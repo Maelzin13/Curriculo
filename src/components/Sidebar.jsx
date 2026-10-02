@@ -1,6 +1,6 @@
 import SocialNetworkContainer from "./SocialNetworkContainer";
 import InformationContainer from "./InformationContainer";
-import Avatar from "../img/Mael.png";
+import Avatar from "../img/foto-linkedin.jpg";
 import "../styles/components/sidebar.sass";
 
 const Sidebar = () => {
