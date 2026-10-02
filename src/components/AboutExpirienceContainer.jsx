@@ -120,6 +120,14 @@ const AboutExpirienceContainer = () => {
               banco de dados Oracle.
             </li>
           </ul>
+          <li>
+            Atuação como facilitador entre negócio e desenvolvimento, aplicando{" "}
+            <strong>Scrum</strong> para priorização de backlog.
+          </li>
+          <li>
+            <strong>Resultado:</strong> entregas em 15% menos tempo e maior
+            alinhamento com os usuários finais.
+          </li>
         </ul>
       </div>
       <div className="experience">
@@ -154,9 +162,13 @@ const AboutExpirienceContainer = () => {
               (Droplets &amp; Spaces), AWS (ECS/S3/mTLS) e Firebase Storage.
             </li>
             <li>
-              <strong>Integrações</strong>: Zendesk, bots do Telegram, API
+              <strong>Integrações</strong>: Zendesk (Support e Guide), bots do Telegram, API
               Meta (Facebook), Google OAuth 2.0 e ChatGPT para feed
               personalizado.
+            </li>
+            <li>
+              <strong>Painel administrativo</strong>: Node.js, React e Laravel
+              (Voyager).
             </li>
             <li>
               <strong>UI/UX</strong>: redesign completo dos layouts para uma
@@ -226,6 +238,10 @@ const AboutExpirienceContainer = () => {
               segurança e desempenho no processamento de dados.
             </li>
           </ul>
+          <li>
+            <strong>Resultado:</strong> usuários relataram mais clareza na
+            interface e redução de 20% nos erros operacionais.
+          </li>
           <br />
           <li>
             <strong>Merlion TI</strong> - Desenvolvimento e manutenção de
@@ -273,7 +289,35 @@ const AboutExpirienceContainer = () => {
               completa para instituições de ensino, com funcionalidades
               específicas para a gestão escolar da Cooplem Idiomas.
             </li>
+            <li>
+              <strong>Izzy Series:</strong> aplicativos de construção, limpeza
+              e gestão escolar (<strong>Ionic/Angular</strong>) integrados a APIs
+              Java/PHP e publicados nas lojas Android/iOS, incluindo app escolar
+              com notas e avisos em tempo real.
+            </li>
           </ul>
+        </ul>
+      </div>
+      <div className="experience">
+        <p>Diversos Clientes</p>
+        <p>
+          <i>Desenvolvedor Full Stack Freelancer</i>
+        </p>
+        <p>Período: Janeiro/2020 - Dezembro/2023</p>
+        <ul>
+          <li>
+            Desenvolvimento de sites e MVPs com{" "}
+            <strong>Laravel, Vue.js, React e Node.js</strong>, hospedados em
+            DigitalOcean e Azure.
+          </li>
+          <li>
+            Integração com <strong>Mercado Pago</strong> e configuração de
+            pipelines CI/CD com <strong>GitHub Actions</strong>.
+          </li>
+          <li>
+            <strong>Resultado:</strong> entregas de MVP em média 30% mais
+            rápidas.
+          </li>
         </ul>
       </div>
     </section>
