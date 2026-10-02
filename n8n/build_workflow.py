@@ -51,14 +51,18 @@ memoria.vistas = memoria.vistas || {};
 const ehVaga = (url) =>
   /gupy\.io\/jobs\/|linkedin\.com\/jobs\/view|programathor\.com\.br\/jobs|solides\.jobs|vagas\.solides|\/vaga|\/jobs?\//i.test(url);
 
+// O sandbox do n8n não expõe a classe URL; normaliza com regex.
+const RASTREIO = /^(utm_[a-z]+|trk|trkInfo|refId|trackingId|position|pageNum|originalSubdomain)$/i;
 const normalizar = (url) => {
-  try {
-    const u = new URL(url);
-    u.hash = '';
-    ['utm_source', 'utm_medium', 'utm_campaign', 'trk', 'refId', 'trackingId'].forEach(p => u.searchParams.delete(p));
-    return u.toString().replace(/\/$/, '');
-  } catch { return url; }
+  const [semHash] = url.split('#');
+  const [base, query = ''] = semHash.split('?');
+  const params = query.split('&').filter(p => p && !RASTREIO.test(p.split('=')[0]));
+  return (base.replace(/\/$/, '') + (params.length ? '?' + params.join('&') : ''));
 };
+const hostname = (url) => (url.match(/^https?:\/\/([^/?#]+)/i) || [, ''])[1].replace(/^www\./, '');
+
+const FIRECRAWL_PROMPT = 'Extraia os dados desta vaga de emprego. Use exatamente o texto da página; deixe vazio o que não existir.';
+const FIRECRAWL_SCHEMA = __FIRECRAWL_SCHEMA__;
 
 const vistasNestaExecucao = new Set();
 const vagas = [];
@@ -72,7 +76,13 @@ for (const item of $input.all()) {
       tituloBusca: r.title || '',
       snippet: r.snippet || '',
       dataBusca: r.date || '',
-      fonte: new URL(url).hostname.replace(/^www\./, ''),
+      fonte: hostname(url),
+      firecrawlRequest: {
+        url,
+        onlyMainContent: true,
+        timeout: 60000,
+        formats: [{ type: 'json', prompt: FIRECRAWL_PROMPT, schema: FIRECRAWL_SCHEMA }],
+      },
     }});
   }
 }
@@ -82,7 +92,7 @@ return vagas.slice(0, cfg.maxVagasPorExecucao);
 NORMALIZAR_VAGA_JS = r"""
 // Junta o que o Firecrawl extraiu com o resultado da busca (fallback quando o scrape falha,
 // ex.: LinkedIn, que o Firecrawl não lê).
-const base = $('Filtrar e deduplicar').item.json;
+const { firecrawlRequest, ...base } = $('Filtrar e deduplicar').item.json;
 const fc = $json.data?.json || {};
 const ok = $json.success === true && Object.keys(fc).length > 0;
 return {
@@ -276,6 +286,8 @@ FIRECRAWL_SCHEMA = {
     "required": ["titulo", "empresa", "requisitos"],
 }
 
+FILTRAR_JS = FILTRAR_JS.replace("__FIRECRAWL_SCHEMA__", json.dumps(FIRECRAWL_SCHEMA, ensure_ascii=False))
+
 # ----------------------------------------------------------------- helpers
 
 def nid():
@@ -326,11 +338,7 @@ def sticky(text, pos, w, h, color=None):
 
 # ------------------------------------------------------------------- nodes
 
-firecrawl_body = (
-    "={{ JSON.stringify({ url: $json.url, onlyMainContent: true, timeout: 60000, formats: [{ type: 'json', "
-    "prompt: 'Extraia os dados desta vaga de emprego. Use exatamente o texto da página; deixe vazio o que não existir.', "
-    "schema: " + json.dumps(FIRECRAWL_SCHEMA, ensure_ascii=False) + " }] }) }}"
-)
+firecrawl_body = "={{ JSON.stringify($json.firecrawlRequest) }}"
 
 nodes = [
     {"parameters": {}, "id": nid(), "name": "Executar manualmente",
