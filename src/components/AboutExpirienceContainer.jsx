@@ -170,6 +170,30 @@ const AboutExpirienceContainer = () => {
         </ul>
       </div>
       <div className="experience">
+        <p>Projetos em Saúde e Gestão Clínica</p>
+        <p>
+          <i>Desenvolvedor Fullstack</i>
+        </p>
+        <p>Período: Janeiro/2023 - Dezembro/2024</p>
+        <ul>
+          <li>
+            Sistemas para clínicas de fonoaudiologia que precisavam integrar
+            dados clínicos com APIs seguras, interfaces intuitivas e
+            conformidade com a <strong>LGPD</strong>.
+          </li>
+          <li>
+            ETL em <strong>Pentaho</strong> para migração de dados em Excel,
+            API em <strong>Node.js + PostgreSQL</strong> e sistema fullstack em{" "}
+            <strong>Next.js</strong>.
+          </li>
+          <li>
+            <strong>Resultado:</strong> sistema publicado em produção, com
+            redução de erros de cadastro e ganho de 40% em eficiência
+            administrativa.
+          </li>
+        </ul>
+      </div>
+      <div className="experience">
         <p>Merlion TI e Engesoftware</p>
         <p>
           <i>Desenvolvedor Web (Terceirizado)</i>

@@ -9,7 +9,7 @@ const EducationContainer = () => {
         <p>
           <i>Tecnólogo (CST) em Análise e Desenvolvimento de Sistemas</i>
         </p>
-        <p>Período: Fevereiro/2024 - Agosto/2026</p>
+        <p>Período: Fevereiro/2024 - Agosto/2026 (concluído)</p>
       </div>
     </section>
   );
