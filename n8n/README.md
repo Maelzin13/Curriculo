@@ -9,7 +9,7 @@ Agendado (seg–sex 8h/13h/18h) ─┐
 Executar manualmente ──────────┴─► Configuração ─► Carregar perfil (RAG) ─► Montar buscas
   ─► Serper (Google: LinkedIn, Gupy, Programathor, Sólides…) ─► Filtrar e deduplicar
   ─► Firecrawl (lê a vaga → JSON) ─► Normalizar vaga ─► Serper (pesquisa a empresa)
-  ─► Montar prompt ─► IA Groq · Llama 3.3 70B (match + CV sob medida, JSON) ─► Interpretar análise
+  ─► Montar prompt ─► IA Groq · gpt-oss-120b (match + CV sob medida, JSON) ─► Interpretar análise
   ─► Score ≥ mínimo? ─► Data Table `vagas_analisadas` (aprovadas e descartadas)
 ```
 
@@ -50,7 +50,7 @@ Executar manualmente ──────────┴─► Configuração ─�
 - `periodo` — `qdr:d` (24h) ou `qdr:w` (7 dias).
 - `maxVagasPorExecucao` — teto de vagas analisadas por execução (controla custo).
 - `scoreMinimo` — corte para "aprovada" (padrão 70).
-- `modelo` — modelo do Groq (padrão `llama-3.3-70b-versatile`).
+- `modelo` — modelo do Groq (padrão `openai/gpt-oss-120b`; o `llama-3.3-70b-versatile` foi descontinuado).
 
 ## Comportamento importante
 

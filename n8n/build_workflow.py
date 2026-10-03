@@ -30,7 +30,7 @@ return [{
     resultadosPorBusca: 10,
     maxVagasPorExecucao: 4,  // plano gratuito do Groq tem limite diário de tokens (~8 mil tokens por vaga)
     scoreMinimo: 70,         // 0-100: abaixo disso a vaga é registrada como descartada
-    modelo: 'llama-3.3-70b-versatile',  // modelo do Groq
+    modelo: 'openai/gpt-oss-120b',  // modelo do Groq (llama-3.3-70b foi descontinuado)
   },
 }];
 """
@@ -205,7 +205,8 @@ return {
     iaRequest: {
       model: cfg.modelo,
       temperature: 0.3,
-      max_tokens: 3000,
+      reasoning_effort: 'low',   // gpt-oss: raciocínio curto economiza tokens do plano gratuito
+      max_tokens: 6000,          // inclui os tokens de raciocínio
       response_format: { type: 'json_object' },
       messages: [
         { role: 'system', content: `${instrucoes}\n\n<perfil_candidato>\n${perfil}\n</perfil_candidato>\n\n${formato}` },
@@ -400,7 +401,7 @@ nodes = [
            "1. Busca vagas no Google via **Serper** (LinkedIn, Gupy, Programathor, Sólides…)\n"
            "2. Lê cada vaga com **Firecrawl** (JSON estruturado)\n"
            "3. Pesquisa a **empresa** (Serper)\n"
-           "4. **IA (Groq · Llama 3.3 70B)** compara com o perfil (`n8n/perfil-profissional.md` no GitHub = base RAG)\n"
+           "4. **IA (Groq · gpt-oss-120b)** compara com o perfil (`n8n/perfil-profissional.md` no GitHub = base RAG)\n"
            "5. Salva score, CV sob medida e carta na Data Table `vagas_analisadas`\n\n"
            "Ajuste buscas, limite e score mínimo no nó **Configuração**.",
            [-40, -360], 560, 300, 4),
