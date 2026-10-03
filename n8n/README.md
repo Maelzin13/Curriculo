@@ -9,7 +9,7 @@ Agendado (seg–sex 8h/13h/18h) ─┐
 Executar manualmente ──────────┴─► Configuração ─► Carregar perfil (RAG) ─► Montar buscas
   ─► Serper (Google: LinkedIn, Gupy, Programathor, Sólides…) ─► Filtrar e deduplicar
   ─► Firecrawl (lê a vaga → JSON) ─► Normalizar vaga ─► Serper (pesquisa a empresa)
-  ─► Montar prompt ─► Claude (match + CV sob medida, JSON validado) ─► Interpretar análise
+  ─► Montar prompt ─► IA Groq · Llama 3.3 70B (match + CV sob medida, JSON) ─► Interpretar análise
   ─► Score ≥ mínimo? ─► Data Table `vagas_analisadas` (aprovadas e descartadas)
 ```
 
@@ -26,7 +26,7 @@ Executar manualmente ──────────┴─► Configuração ─�
 1. **Credenciais** (n8n → *Credentials → Add credential*):
    - **Serper** → tipo *Header Auth*: Name `X-API-KEY`, Value = chave do serper.dev
    - **Firecrawl** → tipo *Header Auth*: Name `Authorization`, Value = `Bearer fc-…`
-   - **Claude** → tipo *Anthropic*: chave da Anthropic Console
+   - **IA** → usa a credencial **Groq account** já existente
 2. **Data Table** (n8n → *Overview → Data tables → Create*) chamada `vagas_analisadas` com as colunas:
 
    | Coluna | Tipo |
@@ -40,7 +40,7 @@ Executar manualmente ──────────┴─► Configuração ─�
 4. Abrir os nós e selecionar as credenciais:
    - `Serper – buscar vagas` e `Serper – pesquisar empresa` → Serper
    - `Firecrawl – ler vaga` → Firecrawl
-   - `Claude – analisar match` → Claude
+   - `IA (Groq) – analisar match` → Groq account
    - `Salvar vaga aprovada` / `Salvar vaga descartada` → conferir se a tabela `vagas_analisadas` está selecionada
 5. **Executar manualmente** uma vez para testar, depois **ativar** o workflow.
 
@@ -50,7 +50,7 @@ Executar manualmente ──────────┴─► Configuração ─�
 - `periodo` — `qdr:d` (24h) ou `qdr:w` (7 dias).
 - `maxVagasPorExecucao` — teto de vagas analisadas por execução (controla custo).
 - `scoreMinimo` — corte para "aprovada" (padrão 70).
-- `modelo` — `claude-opus-5-5`.
+- `modelo` — modelo do Groq (padrão `llama-3.3-70b-versatile`).
 
 ## Comportamento importante
 
@@ -58,13 +58,12 @@ Executar manualmente ──────────┴─► Configuração ─�
   reanalisadas. Essa memória só persiste em execuções do workflow **ativo** (execução manual não grava).
 - **LinkedIn**: o Firecrawl não lê páginas do LinkedIn; nesses casos a análise usa título e trecho do
   Google (menos detalhe). Gupy, Programathor e Sólides são lidos por completo.
-- **Fallback do Claude**: a chamada usa `fallbacks: "default"` (beta `server-side-fallback-2026-07-01`):
-  se o modelo recusar por política, a API reprocessa automaticamente em outro modelo.
+- **Limites do Groq (plano gratuito)**: ~8 mil tokens por vaga; o nó da IA analisa 1 vaga por minuto e a
+  configuração limita 4 vagas por execução. Erros de limite ficam na coluna `erro` e a vaga é re-tentada depois.
 - **Sem invenção**: o prompt obriga a IA a usar só fatos do `perfil-profissional.md`; o conteúdo das
   páginas é tratado como dado, não como instrução.
 
-## Custo aproximado por vaga
+## Custo
 
-- Serper: 2 buscas · Firecrawl: 1 scrape (+ créditos do JSON mode)
-- Claude Opus 5.5 (effort `medium`): ~6–10 mil tokens de entrada + ~2–3 mil de saída ≈ US$ 0,05–0,10
-- Com 8 vagas × 3 execuções/dia útil ≈ 500 vagas/mês no máximo → ajuste `maxVagasPorExecucao` e as buscas.
+- Serper: 2 buscas por vaga · Firecrawl: 1 scrape por vaga
+- IA: Groq no plano gratuito (sem custo, com limite diário de tokens)

@@ -28,9 +28,9 @@ return [{
     ],
     periodo: 'qdr:w',        // Google: qdr:d = 24h, qdr:w = 7 dias
     resultadosPorBusca: 10,
-    maxVagasPorExecucao: 8,  // limita custo (Firecrawl + Claude) por execução
+    maxVagasPorExecucao: 4,  // plano gratuito do Groq tem limite diário de tokens (~8 mil tokens por vaga)
     scoreMinimo: 70,         // 0-100: abaixo disso a vaga é registrada como descartada
-    modelo: 'claude-opus-5-5',
+    modelo: 'llama-3.3-70b-versatile',  // modelo do Groq
   },
 }];
 """
@@ -157,7 +157,7 @@ Responsabilidades:
 ${lista(vaga.responsabilidades)}
 
 Descrição:
-${(vaga.descricao || '').slice(0, 6000)}
+${(vaga.descricao || '').slice(0, 4000)}
 </vaga>
 
 <empresa>
@@ -196,19 +196,21 @@ const schema = {
   },
 };
 
+// Groq (API compatível com OpenAI): modo JSON + schema descrito no prompt.
+const formato = `Responda APENAS com um objeto JSON válido (sem texto fora dele) que siga este JSON Schema:\n${JSON.stringify(schema)}`;
+
 return {
   json: {
     vaga,
-    claudeRequest: {
+    iaRequest: {
       model: cfg.modelo,
-      max_tokens: 16000,
-      fallbacks: 'default',
-      output_config: { effort: 'medium', format: { type: 'json_schema', schema } },
-      system: [
-        { type: 'text', text: instrucoes },
-        { type: 'text', text: `<perfil_candidato>\n${perfil}\n</perfil_candidato>`, cache_control: { type: 'ephemeral' } },
+      temperature: 0.3,
+      max_tokens: 3000,
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: `${instrucoes}\n\n<perfil_candidato>\n${perfil}\n</perfil_candidato>\n\n${formato}` },
+        { role: 'user', content: userMsg },
       ],
-      messages: [{ role: 'user', content: userMsg }],
     },
   },
 };
@@ -224,11 +226,20 @@ memoria.vistas = memoria.vistas || {};
 let a = null, erro = '';
 if (resp.error) {
   erro = typeof resp.error === 'string' ? resp.error : JSON.stringify(resp.error).slice(0, 500);
-} else if (resp.stop_reason === 'refusal') {
-  erro = `recusado (${resp.stop_details?.category || 'sem categoria'})`;
 } else {
-  const texto = (resp.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+  const texto = resp.choices?.[0]?.message?.content || '';
   try { a = JSON.parse(texto); } catch (e) { erro = 'JSON inválido: ' + texto.slice(0, 300); }
+  if (a && resp.choices[0].finish_reason === 'length') erro = 'resposta truncada (max_tokens)';
+}
+
+// Modelos open-source às vezes omitem campos: normaliza tipos.
+const lista = (v) => (Array.isArray(v) ? v.map(String) : v ? [String(v)] : []);
+if (a) {
+  ['motivos', 'gaps', 'palavras_chave', 'competencias_destaque', 'perguntas_entrevista'].forEach(k => { a[k] = lista(a[k]); });
+  a.experiencias_destaque = Array.isArray(a.experiencias_destaque) ? a.experiencias_destaque : [];
+  a.score = Math.max(0, Math.min(100, Math.round(Number(a.score) || 0)));
+  a.veredito = a.veredito || (a.score >= cfg.scoreMinimo ? 'candidatar' : 'descartar');
+  ['titulo_cv', 'resumo_cv', 'carta_apresentacao'].forEach(k => { a[k] = a[k] ? String(a[k]) : ''; });
 }
 
 // Só marca como vista quando a análise deu certo (falhas são re-tentadas na próxima execução).
@@ -308,9 +319,9 @@ def http(name, pos, method, url, body_expr=None, cred=None, headers=None, timeou
     if cred == "header":
         p["authentication"] = "genericCredentialType"
         p["genericAuthType"] = "httpHeaderAuth"
-    elif cred == "anthropic":
+    elif cred == "groq":
         p["authentication"] = "predefinedCredentialType"
-        p["nodeCredentialType"] = "anthropicApi"
+        p["nodeCredentialType"] = "groqApi"
     if headers:
         p["sendHeaders"] = True
         p["headerParameters"] = {"parameters": [{"name": k, "value": v} for k, v in headers.items()]}
@@ -360,10 +371,9 @@ nodes = [
          body_expr="={{ JSON.stringify({ q: ($json.empresa ? '\"' + $json.empresa + '\" empresa tecnologia cultura' : $json.titulo + ' empresa'), gl: 'br', hl: 'pt-br', num: 5 }) }}",
          cred="header", on_error="continueRegularOutput"),
     code("Montar prompt", MONTAR_PROMPT_JS, [2160, 100], each=True),
-    http("Claude – analisar match", [2400, 100], "POST", "https://api.anthropic.com/v1/messages",
-         body_expr="={{ JSON.stringify($json.claudeRequest) }}", cred="anthropic",
-         headers={"anthropic-version": "2023-06-01", "anthropic-beta": "server-side-fallback-2026-07-01"},
-         timeout=300000, on_error="continueRegularOutput", batch=(1, 1000)),
+    http("IA (Groq) – analisar match", [2400, 100], "POST", "https://api.groq.com/openai/v1/chat/completions",
+         body_expr="={{ JSON.stringify($json.iaRequest) }}", cred="groq",
+         timeout=120000, on_error="continueRegularOutput", batch=(1, 60000)),  # 1 vaga/min: limite TPM do Groq
     code("Interpretar análise", INTERPRETAR_JS, [2640, 100], each=True),
     {"parameters": {
         "conditions": {
@@ -390,11 +400,11 @@ nodes = [
            "1. Busca vagas no Google via **Serper** (LinkedIn, Gupy, Programathor, Sólides…)\n"
            "2. Lê cada vaga com **Firecrawl** (JSON estruturado)\n"
            "3. Pesquisa a **empresa** (Serper)\n"
-           "4. **Claude** compara com o perfil (`n8n/perfil-profissional.md` no GitHub = base RAG)\n"
+           "4. **IA (Groq · Llama 3.3 70B)** compara com o perfil (`n8n/perfil-profissional.md` no GitHub = base RAG)\n"
            "5. Salva score, CV sob medida e carta na Data Table `vagas_analisadas`\n\n"
            "Ajuste buscas, limite e score mínimo no nó **Configuração**.",
            [-40, -360], 560, 300, 4),
-    sticky("### Credenciais\n- Serper: Header Auth `X-API-KEY`\n- Firecrawl: Header Auth `Authorization` = `Bearer fc-…`\n- Claude: credencial **Anthropic**",
+    sticky("### Credenciais\n- Serper: Header Auth `X-API-KEY`\n- Firecrawl: Header Auth `Authorization` = `Bearer fc-…`\n- IA: credencial **Groq account**",
            [940, -260], 420, 200, 6),
 ]
 
@@ -402,7 +412,7 @@ by = {n["name"]: n for n in nodes}
 flow = [
     "Configuração", "Carregar perfil (RAG)", "Montar buscas", "Serper – buscar vagas", "Filtrar e deduplicar",
     "Firecrawl – ler vaga", "Normalizar vaga", "Serper – pesquisar empresa", "Montar prompt",
-    "Claude – analisar match", "Interpretar análise", "Score ≥ mínimo?",
+    "IA (Groq) – analisar match", "Interpretar análise", "Score ≥ mínimo?",
 ]
 connections = {}
 def link(a, b, out=0):
@@ -425,7 +435,7 @@ for a, c in connections.items():
             assert t["node"] in by, t["node"]
 
 workflow = {
-    "name": "Vagas + RAG do Currículo (Serper · Firecrawl · Claude)",
+    "name": "Vagas + RAG do Currículo (Serper · Firecrawl · Groq)",
     "nodes": nodes,
     "connections": connections,
     "settings": {"executionOrder": "v1", "timezone": "America/Sao_Paulo"},
